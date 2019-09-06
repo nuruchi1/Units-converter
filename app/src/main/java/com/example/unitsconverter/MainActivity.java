@@ -8,9 +8,13 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.InputType;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +41,43 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    void convertLbsToKg()
+    {
+        EditText lbs= (EditText) findViewById(R.id.lbs);
+        lbs.setInputType(InputType.TYPE_CLASS_NUMBER);
+        EditText kg=(EditText) findViewById(R.id.kg);
+        kg.setInputType(InputType.TYPE_CLASS_NUMBER);
+        double x = Integer.parseInt(kg.getText().toString());
+        double result = x/2.205;
+        lbs.setText(String.valueOf(result));
+    }
+
+    public void click(View view)
+    {
+        convertLbsToKg();
+        Button b2 = (Button) findViewById(R.id.enter2);
+        b2.setEnabled(false);
+    }
+
+    public void click2(View view)
+    {
+        convertLbsToKg();
+        Button b1 = (Button) findViewById(R.id.enter);
+        b1.setEnabled(false);
+    }
+    public void reset(View view)
+    {
+        Button b1 = (Button) findViewById(R.id.enter);
+        b1.setEnabled(true);
+        Button b2 = (Button) findViewById(R.id.enter2);
+        b2.setEnabled(true);
+        EditText lbs = (EditText) findViewById(R.id.lbs);
+        EditText kg = (EditText) findViewById(R.id.kg);
+        lbs.setText("");
+        kg.setText("");
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
