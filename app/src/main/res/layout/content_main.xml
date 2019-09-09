@@ -6,17 +6,85 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
+    android:background="@color/lightBlue"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+
+    <EditText
+        android:id="@+id/lbs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Hello! This is a Pounds(lbs) to Kilogram(kg) converter"
-        android:textColor="#000000"
+        android:text="Pounds(lbs)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <EditText
+        android:id="@+id/kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kilograms(kg)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="92dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/lbs"
+        android:background="@color/lightGrey"
+        android:layout_centerHorizontal="true"
+        android:onClick="click"
+        android:text="ENTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20"/>
+
+    <Button
+        android:id="@+id/enter2"
+        android:layout_width="92dp"
+        android:layout_height="52dp"
+        android:layout_below="@+id/kg"
+        android:background="@color/lightGrey"
+        android:layout_centerHorizontal="true"
+        android:onClick="click2"
+        android:text="ENTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="92dp"
+        android:layout_height="52dp"
+        android:background="@color/lightGrey"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="reset"
+        android:text="RESET"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,23 +18,43 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-   @Override
+        private Button enter;
+        private Button enter2;
+        private Button reset;
+        private EditText lbs;
+        private EditText kg;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        enter = findViewById(R.id.enter);
+        enter2 = findViewById(R.id.enter2);
+        reset = findViewById(R.id.reset);
+        lbs = findViewById(R.id.lbs);
+        kg = findViewById(R.id.kg);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        enter.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View view)
+            {
+                convertKgtoLbs();
+                enter.setEnabled(false);
             }
         });
-    }
 
+        enter2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                convertLbsToKg();
+                enter2.setEnabled(false);
+            }
+        });
+
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -44,28 +64,27 @@ public class MainActivity extends AppCompatActivity {
 
     void convertLbsToKg()
     {
-        EditText lbs= (EditText) findViewById(R.id.lbs);
+        EditText lbs=  findViewById(R.id.lbs);
         lbs.setInputType(InputType.TYPE_CLASS_NUMBER);
-        EditText kg=(EditText) findViewById(R.id.kg);
+        EditText kg= findViewById(R.id.kg);
+        kg.setInputType(InputType.TYPE_CLASS_NUMBER);
+        double x = Integer.parseInt(lbs.getText().toString());
+        double result = x/2.205;
+        kg.setText(String.valueOf(result));
+    }
+
+    void convertKgtoLbs()
+    {
+        EditText lbs=  findViewById(R.id.lbs);
+        lbs.setInputType(InputType.TYPE_CLASS_NUMBER);
+        EditText kg= findViewById(R.id.kg);
         kg.setInputType(InputType.TYPE_CLASS_NUMBER);
         double x = Integer.parseInt(kg.getText().toString());
-        double result = x/2.205;
+        double result = x*2.205;
         lbs.setText(String.valueOf(result));
     }
 
-    public void click(View view)
-    {
-        convertLbsToKg();
-        Button b2 = (Button) findViewById(R.id.enter2);
-        b2.setEnabled(false);
-    }
 
-    public void click2(View view)
-    {
-        convertLbsToKg();
-        Button b1 = (Button) findViewById(R.id.enter);
-        b1.setEnabled(false);
-    }
     public void reset(View view)
     {
         Button b1 = (Button) findViewById(R.id.enter);
@@ -74,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
         b2.setEnabled(true);
         EditText lbs = (EditText) findViewById(R.id.lbs);
         EditText kg = (EditText) findViewById(R.id.kg);
-        lbs.setText("");
-        kg.setText("");
+        lbs.setText("Pounds(lbs)");
+        kg.setText("Kilograms(kg)");
     }
 
 
