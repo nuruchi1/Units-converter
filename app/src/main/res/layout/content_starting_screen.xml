@@ -23,7 +23,7 @@
             android:src="@drawable/scale" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv"
             android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

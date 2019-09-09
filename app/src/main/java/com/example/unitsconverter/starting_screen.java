@@ -15,11 +15,6 @@ public class starting_screen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        public void welcometran()
-        {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_starting_screen);
