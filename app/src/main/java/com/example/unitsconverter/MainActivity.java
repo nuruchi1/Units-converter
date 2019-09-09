@@ -7,7 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
+import android.content.Intent;
 import android.text.InputType;
 import android.view.View;
 import android.view.Menu;
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         private Button reset;
         private EditText lbs;
         private EditText kg;
+        private static int Time = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
         reset = findViewById(R.id.reset);
         lbs = findViewById(R.id.lbs);
         kg = findViewById(R.id.kg);
+
+
+   /*   public void welcometran()
+        {
+            Intent intent = new Intent(this, starting_screen.class);
+            startActivity(intent);
+        }
+      */
+
 
         enter.setOnClickListener(new View.OnClickListener()
         {

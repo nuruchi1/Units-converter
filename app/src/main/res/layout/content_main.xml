@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    android:background="@color/lightBlue"
+    android:background="@drawable/background"
+    android:backgroundTint="@color/lightBlue"
     tools:showIn="@layout/activity_main">
 
 
@@ -46,7 +47,6 @@
         android:layout_below="@+id/lbs"
         android:background="@color/lightGrey"
         android:layout_centerHorizontal="true"
-        android:onClick="click"
         android:text="ENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
@@ -62,7 +62,6 @@
         android:layout_below="@+id/kg"
         android:background="@color/lightGrey"
         android:layout_centerHorizontal="true"
-        android:onClick="click2"
         android:text="ENTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.499"

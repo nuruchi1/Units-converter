@@ -15,11 +15,41 @@ public class starting_screen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        public void welcometran()
+        {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_starting_screen);
         tv = (TextView) findViewById(R.id.tv);
         iv = (ImageView) findViewById(R.id.iv);
         Animation myani = AnimationUtils.loadAnimation(this, R.anim.transition);
+        tv.startAnimation(myani);
+        iv.startAnimation(myani);
+        final Intent i = new Intent(this, MainActivity.class);
+        Thread timer = new Thread()
+        {
+            public void run()
+            {
+                try
+                {
+                    sleep (5000);
+                }
+                catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                finally
+                {
+                    startActivity(i);
+                    finish();
+                }
+            }
+
+        };
+        timer.start();
     }
 
 };
